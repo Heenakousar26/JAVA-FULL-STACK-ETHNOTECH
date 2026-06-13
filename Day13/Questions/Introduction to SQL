@@ -2,23 +2,25 @@
 
 ## What is SQL?
 
-SQL (Structured Query Language) is a standard language used to interact with relational databases. It is used to create, manage, manipulate, and retrieve data stored in database tables.
+SQL (Structured Query Language) is a standard language used to communicate with relational databases. It helps users create, manage, manipulate, and retrieve data stored in database tables.
 
 ---
 
 ## Database
 
-A database is a collection of related data organized in a structured manner.
+A database is an organized collection of related data. It is used to store information in a structured format so that it can be easily accessed, managed, and updated.
 
-### Example
+### Example:
 
-A student database may contain information such as student ID, name, age, and marks.
+A student database may contain details such as student ID, name, age, and marks.
 
 ---
 
 ## Table
 
-A table is used to store data in rows and columns.
+A table is a collection of related data organized into rows and columns.
+
+### Example:
 
 | StudentID | Name  | Age |
 | --------- | ----- | --- |
@@ -29,7 +31,7 @@ A table is used to store data in rows and columns.
 
 # Types of SQL Commands
 
-SQL commands are divided into five categories:
+SQL commands are classified into five categories:
 
 1. DDL (Data Definition Language)
 2. DML (Data Manipulation Language)
@@ -39,13 +41,18 @@ SQL commands are divided into five categories:
 
 ---
 
-## 1. DDL (Data Definition Language)
+## DDL (Data Definition Language)
 
-DDL commands are used to define and modify the structure of database objects.
+DDL commands are used to define and modify the structure of database objects such as tables.
 
-### CREATE
+### Common DDL Commands:
 
-Creates a new table.
+* CREATE – Creates a new database object.
+* ALTER – Modifies an existing database object.
+* DROP – Deletes a database object permanently.
+* TRUNCATE – Removes all records from a table while keeping its structure.
+
+### Example:
 
 ```sql
 CREATE TABLE Students (
@@ -55,127 +62,78 @@ CREATE TABLE Students (
 );
 ```
 
-### ALTER
-
-Modifies an existing table.
-
-```sql
-ALTER TABLE Students
-ADD Email VARCHAR(100);
-```
-
-### DROP
-
-Deletes a table permanently.
-
-```sql
-DROP TABLE Students;
-```
-
-### TRUNCATE
-
-Removes all records from a table while keeping its structure.
-
-```sql
-TRUNCATE TABLE Students;
-```
-
 ---
 
-## 2. DML (Data Manipulation Language)
+## DML (Data Manipulation Language)
 
-DML commands are used to insert, update, and delete data.
+DML commands are used to manipulate the data stored in tables.
 
-### INSERT
+### Common DML Commands:
+
+* INSERT – Adds new records to a table.
+* UPDATE – Modifies existing records.
+* DELETE – Removes records from a table.
+
+### Example:
 
 ```sql
 INSERT INTO Students
 VALUES (101, 'Alice', 20);
 ```
 
-### UPDATE
-
-```sql
-UPDATE Students
-SET Age = 21
-WHERE StudentID = 101;
-```
-
-### DELETE
-
-```sql
-DELETE FROM Students
-WHERE StudentID = 101;
-```
-
 ---
 
-## 3. DQL (Data Query Language)
+## DQL (Data Query Language)
 
-DQL commands are used to retrieve data from tables.
+DQL commands are used to retrieve data from a database.
 
-### SELECT
+### Common DQL Command:
+
+* SELECT – Retrieves data from one or more tables.
+
+### Example:
 
 ```sql
 SELECT * FROM Students;
 ```
 
-### SELECT with WHERE
+---
+
+## DCL (Data Control Language)
+
+DCL commands are used to control access and permissions in a database.
+
+### Common DCL Commands:
+
+* GRANT – Gives privileges to users.
+* REVOKE – Removes privileges from users.
+
+### Example:
 
 ```sql
-SELECT *
-FROM Students
-WHERE Age > 20;
+GRANT SELECT ON Students TO User1;
 ```
 
 ---
 
-## 4. DCL (Data Control Language)
-
-DCL commands are used to control user permissions.
-
-### GRANT
-
-```sql
-GRANT SELECT
-ON Students
-TO User1;
-```
-
-### REVOKE
-
-```sql
-REVOKE SELECT
-ON Students
-FROM User1;
-```
-
----
-
-## 5. TCL (Transaction Control Language)
+## TCL (Transaction Control Language)
 
 TCL commands are used to manage transactions in a database.
 
-### COMMIT
+### Common TCL Commands:
+
+* COMMIT – Saves changes permanently.
+* ROLLBACK – Reverts changes made during a transaction.
+* SAVEPOINT – Creates a point within a transaction for partial rollback.
+
+### Example:
 
 ```sql
 COMMIT;
 ```
 
-### ROLLBACK
-
-```sql
-ROLLBACK;
-```
-
-### SAVEPOINT
-
-```sql
-SAVEPOINT sp1;
-```
-
 ---
 
-# Conclusion
+## Conclusion
 
-SQL is a database language used to create, modify, manage, and retrieve data from relational databases. The main categories of SQL commands are DDL, DML, DQL, DCL, and TCL, each serving a specific purpose in database management.
+SQL is an essential language for working with relational databases. It provides various commands for defining database structures, manipulating data, retrieving information, controlling user access, and managing transactions. Understanding DDL, DML, DQL, DCL, and TCL forms the foundation for learning database management and SQL programming.
